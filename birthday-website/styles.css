@@ -1,0 +1,141 @@
+body {
+    font-family: "Happy Monkey";
+    background: linear-gradient(lightskyblue, pink);
+    color: #ffffff;
+}
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h4, p{
+    text-shadow: 0px 0px 1px black;
+}
+#profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #EFB0C9;
+    object-fit: cover;
+}
+
+#bday-age {
+    background: #EFB0C9;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#bday-date {
+    margin-top: -13px;
+    font-weight: 200;
+    padding: 5px 10px;
+    font-size: 15px;
+    background: #EFB0C9;
+    border-radius: 5px;
+}
+.gift-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.gift-title {
+    margin-bottom: 10px
+}
+.gift-hint {
+    margin-top: -10px;
+    text-shadow: 0px 0px 1px black;
+}
+#gift-one {
+    background-image: url('images/gift-cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    height: 400px;
+    width: 400px;
+    border: 7px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#gift-one:hover {
+    background-image: url("images/happy.gif");
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+}
+
+#gift-two {
+    background-image: url('images/gift-cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    height: 400px;
+    width: 400px;
+    border: 7px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#gift-two:hover {
+    background-image: url("images/hot.gif");
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+}
+
+#gift-three {
+    background-image: url('images/gift-cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    height: 400px;
+    width: 400px;
+    border: 7px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#gift-three:hover {
+    background-image: url("images/genius.gif");
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+}
+
+#gift-four {
+    background-image: url('images/gift-cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    height: 400px;
+    width: 400px;
+    border: 7px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#gift-four:hover {
+    background-image: url("images/badass.gif");
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+}
+
+#gift-five {
+    background-image: url('images/gift-cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    height: 400px;
+    width: 400px;
+    border: 7px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#gift-five:hover {
+    background-image: url("images/cheers.gif");
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+}
+
+.text-link {
+    text-shadow: 0px 0px 5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#link-website {
+    color: whitesmoke;
+}
