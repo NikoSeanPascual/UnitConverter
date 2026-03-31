@@ -47,10 +47,10 @@ PasswordGenerator
 
 
 ## LIVE DEMO 
-if you want to see the actual project, feel free to check it out by clicking the link next to this emoji 👉 (https://password-generator-v4.netlify.app/) **UP TO DATE**
+if you want to see the actual project, feel free to check it out by clicking the link next to this emoji 👉 (https://password-generator-v4.netlify.app/) **NOT UP TO DATE**
 
 ## Future Updates(I will work on this a bit longer and this are the features I will add everyday)
-Note: I wont be able to update this everyday because of school but I'll try since I actually want to make an actual project that isnt just sent here and never updated, because that beats the purpose of making repositories literally, also note that I've only been learning how to use HTML, CSS, JAVASCIPT FOR about a month since I used to be a python programmer, so don't expect the code to be perfect
+Note: School is finished so I will upd everyday till this is finished feel free to send me some suggestions to add stuff
 
 1. "Copied!" feedback - replace tootip text with **Copied!** for 1 second ✅**ADDED IN 03/22/26**
 2. Password length control - Add some kind of input that can be customize base on how long the password length you want it to be  ✅**ADDED IN 03/24/26**
@@ -59,7 +59,7 @@ Note: I wont be able to update this everyday because of school but I'll try sinc
 5. Color feedback - change password bpx color when copied ✅**ADDED IN 03/28/26**
 6. Regenerate button animation - Add click animation or shake effect ✅**ADDED IN 03/31/26**
 7. Password strength indicator - strong, medium and weak ✅**ADDED IN 03/31/26**
-8. Dark/Light mode toggle
+8. Dark/Light mode toggle ✅**ADDED IN 03/31/26**
 9. Mobile responsiveness - make it look the same when you open it on phones
 10. Export passwords - be able to download the password as .txt
 
