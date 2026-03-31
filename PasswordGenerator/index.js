@@ -38,6 +38,7 @@ function generatePassword() {
 
     passwordOneText.textContent = pass1;
     passwordTwoText.textContent = pass2;
+    updateStrengthUI(pass1, pass2);
 }
 
 function setupCopy(el, textEl) {
@@ -51,6 +52,54 @@ function setupCopy(el, textEl) {
             setTimeout(() => { tooltip.textContent = "Copy Password"; }, 1000);
         });
     });
+}
+function evaluateStrength(password) {
+    let score = 0;
+
+    // Length scoring
+    if (password.length >= 8) score++;
+    if (password.length >= 12) score++;
+    if (password.length >= 16) score++;
+
+    // Character variety scoring
+    if (/[a-z]/.test(password)) score++;
+    if (/[A-Z]/.test(password)) score++;
+    if (/[0-9]/.test(password)) score++;
+    if (/[^A-Za-z0-9]/.test(password)) score++;
+
+    return score;
+}
+function updateStrengthUI(password) {
+    const strengthFill = document.getElementById("strength-fill");
+    const strengthText = document.getElementById("strength-text");
+
+    const score = evaluateStrength(password);
+
+    let width = 0;
+    let color = "";
+    let label = "";
+
+    if (score <= 2) {
+        width = 25;
+        color = "red";
+        label = "Weak";
+    } else if (score <= 4) {
+        width = 50;
+        color = "orange";
+        label = "Moderate";
+    } else if (score <= 6) {
+        width = 75;
+        color = "yellowgreen";
+        label = "Strong";
+    } else {
+        width = 100;
+        color = "#00b51e";
+        label = "Very Strong";
+    }
+
+    strengthFill.style.width = width + "%";
+    strengthFill.style.background = color;
+    strengthText.textContent = "Strength: " + label;
 }
 
 setupCopy(document.getElementById("password-one-el"), passwordOneText);
