@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: "Jersey 10", sans-serif; /* A clean, modern look */
+    background-color: #f4f4f4; /* Light gray for the "rest" of the page */
+}
+
+.hero {
+    background-color: #05b1eb; /* A nice purple like the Scrimba project */
+    color: white;
+    min-height: 35vh; /* Takes up 80% of the window */
+
+    display: flex;
+    flex-direction: column; /* Stack h1, input, button vertically */
+    justify-content: center; /* Center them top-to-bottom */
+    align-items: center;    /* Center them left-to-right */
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    text-shadow:
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+    color: whitesmoke;
+    -webkit-text-stroke: 0.5px #000000;
+}
+
+h1 span {
+    color: #1b1c1c;
+    -webkit-text-stroke: 1px whitesmoke;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+#number-el {
+    width: 120px;
+    height: 80px;
+    background: transparent;
+    border: 5px solid whitesmoke;
+    border-radius: 5px;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+    outline: none;
+}
+
+#convert-el {
+    background: white;
+    color: #3D3D3D;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#convert-el:active {
+    transform: translateY(2px);
+}
+
+.results-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px;
+    background-color: #F4F4F4;
+}
+
+.card {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+
+
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
