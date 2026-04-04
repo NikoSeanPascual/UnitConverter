@@ -18,7 +18,6 @@ convertBtn.addEventListener("click", function () {
     const literToGallon = 0.264
     const kiloToPound = 2.204
 
-    // LENGTH
     const metersToFeet = (value * meterToFeet).toFixed(3)
     const feetToMeters = (value / meterToFeet).toFixed(3)
 
