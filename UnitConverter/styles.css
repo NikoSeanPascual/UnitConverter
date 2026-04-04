@@ -1,24 +1,27 @@
 body {
     margin: 0;
-    font-family: "Jersey 10", sans-serif; /* A clean, modern look */
-    background-color: #f4f4f4; /* Light gray for the "rest" of the page */
+    font-family: "Jersey 10", sans-serif;
+    background-color: #f4f4f4;
 }
 
+/* HERO SECTION */
 .hero {
-    background-color: #05b1eb; /* A nice purple like the Scrimba project */
+    background-color: #05b1eb;
     color: white;
-    min-height: 35vh; /* Takes up 80% of the window */
+    min-height: 35vh;
 
     display: flex;
-    flex-direction: column; /* Stack h1, input, button vertically */
-    justify-content: center; /* Center them top-to-bottom */
-    align-items: center;    /* Center them left-to-right */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+
     padding: 20px;
 }
 
+/* TITLE */
 h1 {
-    text-shadow:
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     margin-bottom: 20px;
     font-size: 3.5rem;
     color: whitesmoke;
@@ -32,6 +35,7 @@ h1 span {
     opacity: 0.9;
 }
 
+/* INPUT */
 #number-el {
     width: 120px;
     height: 80px;
@@ -46,6 +50,7 @@ h1 span {
     outline: none;
 }
 
+/* BUTTON */
 #convert-el {
     background: white;
     color: #3D3D3D;
@@ -56,12 +61,18 @@ h1 span {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
+}
+
+#convert-el:hover {
+    background: #eaeaea;
 }
 
 #convert-el:active {
     transform: translateY(2px);
 }
 
+/* RESULTS AREA */
 .results-area {
     display: flex;
     flex-direction: column;
@@ -71,6 +82,7 @@ h1 span {
     background-color: #F4F4F4;
 }
 
+/* CARDS */
 .card {
     background: #FFFFFF;
     width: 100%;
@@ -78,7 +90,17 @@ h1 span {
     padding: 30px;
     text-align: center;
     border-radius: 8px;
-
-
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* CARD TEXT */
+.card h3 {
+    margin-bottom: 10px;
+    color: #05b1eb;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #333;
 }
