@@ -130,6 +130,7 @@ convertBtn.addEventListener("click", function () {
     activeTimeouts.push(delay)
 })
 
+
 let isDark = false
 let isToggling = false
 

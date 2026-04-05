@@ -20,6 +20,7 @@ body {
     padding: 20px;
 }
 
+
 /* SMOOTH GLOBAL TRANSITION */
 body, .hero, .card, .results-area, h1, .card h3, .card p {
     transition: all 0.6s ease;
