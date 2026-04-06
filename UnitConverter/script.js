@@ -4,6 +4,11 @@ const convertBtn = document.getElementById("convert-el")
 const lengthContainer = document.getElementById("length-container")
 const volumeContainer = document.getElementById("volume-container")
 const massContainer = document.getElementById("mass-container")
+
+const areaContainer = document.getElementById("area-container")
+const dataContainer = document.getElementById("data-container")
+const speedContainer = document.getElementById("speed-container")
+
 const themeToggle = document.getElementById("theme-toggle")
 const themeImg = document.getElementById("theme-img")
 
@@ -63,15 +68,28 @@ convertBtn.addEventListener("click", function () {
     animateCard(volumeContainer)
     animateCard(massContainer)
 
+    animateCard(areaContainer)
+    animateCard(dataContainer)
+    animateCard(speedContainer)
+
     lengthContainer.innerHTML = "<p>Converting...</p>"
     volumeContainer.innerHTML = "<p>Converting...</p>"
     massContainer.innerHTML = "<p>Converting...</p>"
+
+    areaContainer.innerHTML = "<p>Converting...</p>"
+    dataContainer.innerHTML = "<p>Converting...</p>"
+    speedContainer.innerHTML = "<p>Converting...</p>"
+
 
     const delay = setTimeout(() => {
         // Conversion constants
         const meterToFeet = 3.281
         const literToGallon = 0.264
         const kiloToPound = 2.204
+
+        const sqrFeetToSqrMeter = 10.764
+        const kiloToMegaByte = 0.001
+        const kiloMeterToMiles = 0.621
 
         // LENGTH
         const metersToFeet = (value * meterToFeet).toFixed(3)
@@ -106,6 +124,36 @@ convertBtn.addEventListener("click", function () {
 
         const massText = `${value} kilos = ${kilosToPounds} pounds | ${value} pounds = ${poundsToKilos} kilos`
 
+        // AREA
+        const sqrMetersToSquareFeets = (value * sqrFeetToSqrMeter).toFixed(3)
+        const sqrFeetsToSquareMeters = (value / sqrFeetToSqrMeter).toFixed(3)
+
+        areaContainer.innerHTML = `
+            <h3>Area (Square Feet/Square Meter)</h3>
+            <p id="area-text">
+        `
+        const areaText = `${value} square feet = ${sqrFeetsToSquareMeters} square meter | ${value} square meter, = ${sqrMetersToSquareFeets} square feet`
+
+        // DATA
+        const kiloBytesToMegaBytes = (value * kiloToMegaByte).toFixed(3)
+        const megaBytesToKiloBytes = (value / kiloToMegaByte).toFixed(3)
+
+        dataContainer.innerHTML = `
+            <h3>Data (Kilobytes/Megabytes)</h3>
+            <p id="data-text">
+        `
+        const dataText = `${value} kilobytes = ${kiloBytesToMegaBytes} megabytes | ${value} megabytes = ${megaBytesToKiloBytes} kilobytes`
+
+        // SPEED
+        const kphToMph = (value * kiloMeterToMiles).toFixed(3)
+        const mphToKph = (value / kiloMeterToMiles).toFixed(3)
+
+        speedContainer.innerHTML = `
+            <h3>Speed (KPH/MPH)</h3>
+            <p id="speed-text"></p>
+        `
+        const speedText = `${value} km/h = ${kphToMph} mph | ${value} mph = ${mphToKph} km/h`
+
         // TYPE EFFECT (staggered)
         typeText(document.getElementById("length-text"), lengthText, 15)
 
@@ -116,6 +164,18 @@ convertBtn.addEventListener("click", function () {
         activeTimeouts.push(setTimeout(() => {
             typeText(document.getElementById("mass-text"), massText, 15)
         }, 600))
+
+        activeTimeouts.push(setTimeout(() => {
+            typeText(document.getElementById("area-text"), areaText, 15)
+        }, 900))
+
+        activeTimeouts.push(setTimeout(() => {
+            typeText(document.getElementById("data-text"), dataText, 15)
+        }, 1200))
+
+        activeTimeouts.push(setTimeout(() => {
+            typeText(document.getElementById("speed-text"), speedText, 15)
+        }, 1500))
 
         // Re-enable button after everything
         const unlock = setTimeout(() => {
