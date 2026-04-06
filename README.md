@@ -41,10 +41,10 @@ UnitConverter
 ## 🚧 Future updates 
 1. Animations ✅ **added in 04/05/26**
 2. More Conversions
-   - Square metters to square feet
-   - Kilobytes(**Kb**) to Megabyte(**Mb**)
-   - Kilometer Per Hour(**KPH**) to Miles Per Hour (**MPH**)
-3. Theme Toggle - button that turns the backroubnd from light to dark theme ✅ **added in 04/05/26**
+   - Square metters to square feet ✅ **added in 04/06/26**
+   - Kilobytes(**Kb**) to Megabyte(**Mb**) ✅ **added in 04/06/26**
+   - Kilometer Per Hour(**KPH**) to Miles Per Hour (**MPH**) ✅ **added in 04/06/26**
+3. Theme Toggle - button that turns the backroubnd from light to dark theme ✅ **added in 04/06/26**
 4. UI/UX enhancements
    - Clear All button
    - Keyboard Shortcuts:
