@@ -1,10 +1,10 @@
 const inputEl = document.getElementById("number-el")
 const convertBtn = document.getElementById("convert-el")
+const clearBtn = document.getElementById("clear-el")
 
 const lengthContainer = document.getElementById("length-container")
 const volumeContainer = document.getElementById("volume-container")
 const massContainer = document.getElementById("mass-container")
-
 const areaContainer = document.getElementById("area-container")
 const dataContainer = document.getElementById("data-container")
 const speedContainer = document.getElementById("speed-container")
@@ -132,7 +132,7 @@ convertBtn.addEventListener("click", function () {
             <h3>Area (Square Feet/Square Meter)</h3>
             <p id="area-text">
         `
-        const areaText = `${value} square feet = ${sqrFeetsToSquareMeters} square meter | ${value} square meter, = ${sqrMetersToSquareFeets} square feet`
+        const areaText = `${value} square feet = ${sqrFeetsToSquareMeters} square meter | ${value} square meter = ${sqrMetersToSquareFeets} square feet`
 
         // DATA
         const kiloBytesToMegaBytes = (value * kiloToMegaByte).toFixed(3)
@@ -214,4 +214,78 @@ themeToggle.addEventListener("click", () => {
         isToggling = false
         themeToggle.disabled = false
     }, 700)
+})
+
+clearBtn.addEventListener("click", function () {
+    // Prevent spam (same logic as convert)
+    clearBtn.disabled = true
+    clearBtn.textContent = "Clearing..."
+
+    clearAllTimeouts()
+
+    const cards = [
+        lengthContainer,
+        volumeContainer,
+        massContainer,
+        areaContainer,
+        dataContainer,
+        speedContainer
+    ]
+
+    // Animate cards (staggered)
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.remove("loading", "loaded")
+            card.classList.add("clearing")
+        }, index * 80)
+    })
+
+    // Reset after animation
+    const reset = setTimeout(() => {
+        inputEl.value = ""
+
+        lengthContainer.innerHTML = "<h3>Length (Meter/Feet)</h3>"
+        volumeContainer.innerHTML = "<h3>Volume (Liters/Gallons)</h3>"
+        massContainer.innerHTML = "<h3>Mass (Kilograms/Pounds)</h3>"
+
+        areaContainer.innerHTML = "<h3>Area (Square Feet/Square Meter)</h3>"
+        dataContainer.innerHTML = "<h3>Data (Kilobytes/Megabytes)</h3>"
+        speedContainer.innerHTML = "<h3>Speed (Kilometers per Hour/ Miles per Hour)</h3>"
+
+        cards.forEach(card => {
+            card.classList.remove("clearing")
+        })
+
+        // Restore button (same pattern as convert)
+        clearBtn.disabled = false
+        clearBtn.textContent = "Clear All"
+
+        convertBtn.disabled = false
+        convertBtn.textContent = "Convert"
+    }, 600)
+
+    activeTimeouts.push(reset)
+})
+
+document.addEventListener("keydown", function (e) {
+    const key = e.key.toLowerCase()
+
+    // ENTER → always works
+    if (key === "enter") {
+        if (!convertBtn.disabled) convertBtn.click()
+        return
+    }
+
+    // Block other shortcuts while typing
+    if (document.activeElement === inputEl) return
+
+    // ESC → Clear
+    if (key === "escape") {
+        if (!clearBtn.disabled) clearBtn.click()
+    }
+
+    // D or L → Toggle theme
+    if (key === "d" || key === "l") {
+        if (!isToggling) themeToggle.click()
+    }
 })

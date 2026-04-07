@@ -10,13 +10,11 @@ body {
     background: #05b1eb;
     color: white;
     min-height: 35vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
     padding: 20px;
 }
 
@@ -67,6 +65,18 @@ body.dark-mode #convert-el {
 body.dark-mode #convert-el:hover {
     background: #00cc6a;
 }
+
+body.dark-mode #clear-el {
+    background: rgba(0, 255, 136, 0.05);
+    border: 3px solid #03fc87;
+    color: #03fc87;
+    font-weight: bold;
+}
+
+body.dark-mode #clear-el:hover {
+    background: #035c32;
+}
+
 /* RESULTS AREA */
 body.dark-mode .results-area {
     background: #050805;
@@ -95,6 +105,7 @@ body.dark-mode .card::after {
     box-shadow: 0 0 20px #00ff88;
     opacity: 0.1;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -115,7 +126,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
     box-shadow: 0 0 0 1000px transparent inset !important;
-
     -webkit-text-fill-color: inherit !important;
     transition: background-color 9999s ease-in-out 0s;
 }
@@ -130,7 +140,6 @@ h1 {
     margin-bottom: 20px;
     font-size: 3.5rem;
     color: whitesmoke;
-
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     -webkit-text-stroke: 0.5px #000;
 }
@@ -147,30 +156,25 @@ h1 span {
     width: 120px;
     height: 80px;
     margin-bottom: 25px;
-
     background: transparent;
     border: 5px solid whitesmoke;
     border-radius: 5px;
-
     color: white;
     font-size: 3.5rem;
     font-weight: bold;
     text-align: center;
-
     outline: none;
 }
 
-/* BUTTON */
+/* BUTTONS */
 #convert-el {
     padding: 10px 35px;
     border: none;
     border-radius: 5px;
-
     background: white;
     color: #3D3D3D;
     font-size: 1.2rem;
     font-weight: bold;
-
     cursor: pointer;
     box-shadow: 0 4px 4px rgba(0,0,0,0.25);
     transition: 0.2s ease;
@@ -179,13 +183,29 @@ h1 span {
 #convert-el:hover { background: #eaeaea; }
 #convert-el:active { transform: translateY(2px); }
 
+#clear-el {
+    padding: 10px 35px;
+    border: none;
+    border-radius: 5px;
+
+    background: #0f4fb8;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    transition: 0.2s ease;
+    margin-top: 10px
+}
+#clear-el:hover { background: #166af5; }
+#clear-el:active { transform: translateY(2px); }
+
 /* RESULTS AREA */
 .results-area {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
-
     padding: 40px 20px;
     background: #f4f4f4;
 }
@@ -194,18 +214,13 @@ h1 span {
 .card {
     position: relative;
     overflow: hidden;
-
     width: 100%;
     max-width: 500px;
     padding: 30px;
-
     background: #fff;
     text-align: center;
     border-radius: 8px;
-
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-
-    /* fade-in */
     opacity: 0;
     transform: translateY(10px);
     animation: fadeIn 0.5s ease forwards;
@@ -263,6 +278,25 @@ h1 span {
 
 @keyframes fadeOut {
     to { opacity: 0; }
+}
+
+.card.clearing {
+    animation: clearFade 0.4s ease forwards;
+}
+
+@keyframes clearFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(5px) scale(0.98);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
 }
 
 /* THEME DESIGN*/
