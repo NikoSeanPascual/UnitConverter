@@ -45,11 +45,11 @@ UnitConverter
    - Kilobytes(**Kb**) to Megabyte(**Mb**) ✅ **added in 04/06/26**
    - Kilometer Per Hour(**KPH**) to Miles Per Hour (**MPH**) ✅ **added in 04/06/26**
 3. Theme Toggle - button that turns the backroubnd from light to dark theme ✅ **added in 04/06/26**
-4. UI/UX enhancements
-   - Clear All button
+4. UI/UX enhancements ✅ **added in 04/07/26**
+   - Clear All button ✅ **added in 04/07/26**
    - Keyboard Shortcuts:
-      * **Enter** to trigger conversion
-      * **Esc** to clear the input
-      * **D or L** to toggle to Dark Mode to Light Mode
+      * **Enter** to trigger conversion ✅ **added in 04/07/26**
+      * **Esc** to clear the input ✅ **added in 04/06/26**
+      * **D or L** to toggle to Dark Mode to Light Mode ✅ **added in 04/07/26**
 
 (More Ideas in the future that I might add in the future)
