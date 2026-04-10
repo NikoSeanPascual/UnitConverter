@@ -75,7 +75,7 @@ All results are formatted using `.toFixed(3)` for consistency and readability.
 ```text
 UnitConverter
 │
-├── assets/        # Images (theme icons, etc.)
+├── assets/        # Images (theme icons)
 ├── index.html     # App structure
 ├── styles.css     # Styling, themes, animations
 └── script.js      # Core logic & interactions
